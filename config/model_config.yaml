@@ -1,0 +1,15 @@
+# 🤖 Model Configuration
+# This file defines model-specific settings and parameters for advanced users.
+# All options are documented for clarity and reproducibility in research and production.
+
+# Supported models and their configurations
+models:
+  devstral:
+    name: "devstral:24b"  # Base model identifier for Ollama/Modal
+    custom_name: "devstral-dev:24b"  # Custom model name for fine-tuned variants
+    context_length: 8192  # Maximum context window for code and reasoning tasks
+    temperature: 0.1  # Sampling temperature for deterministic outputs
+    top_p: 0.9  # Nucleus sampling for diversity
+    top_k: 40  # Top-k sampling for output control
+    repeat_penalty: 1.1  # Penalize repetition for more natural completions
+    stop_tokens: ["

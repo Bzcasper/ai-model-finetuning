@@ -5,8 +5,8 @@
 model:
   base_model: "microsoft/DialoGPT-medium"  # Starting point model
   model_name: "my-coding-assistant"        # Your custom model name
-  max_length: 512                         # Maximum text length
-  temperature: 0.7                        # Creativity level (0.1 = focused, 1.0 = creative)
+  max_length: 512                          # Maximum text length for responses
+  temperature: 0.7                         # Creativity level (0.1 = focused, 1.0 = creative)
 
 # Training parameters
 training:
@@ -27,9 +27,9 @@ data:
 # Advanced settings (for experienced users)
 advanced:
   use_lora: true             # Use LoRA fine-tuning (memory efficient)
-  lora_rank: 16              # LoRA complexity
+  lora_rank: 16              # LoRA complexity (higher = more capacity)
   lora_alpha: 32             # LoRA scaling
-  gradient_checkpointing: true # Save memory
+  gradient_checkpointing: true # Save memory during training
   fp16: true                 # Use half precision (faster, less memory)
 
 # Monitoring
@@ -44,3 +44,10 @@ output:
   output_dir: "models/checkpoints"  # Where to save training progress
   final_model_dir: "models/final"   # Where to save final model
   logs_dir: "logs"                  # Where to save logs
+
+# Tips for Students:
+# - You can change 'base_model' to any Hugging Face model you want to start from.
+# - 'batch_size' and 'num_epochs' affect training time and quality.
+# - 'use_lora' and 'fp16' help save memory and speed up training on modern GPUs.
+# - 'use_wandb' lets you track your experiments online (requires a free account).
+# - All output folders will be created automatically if they don't exist.

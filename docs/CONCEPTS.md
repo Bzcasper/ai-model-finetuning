@@ -1,40 +1,61 @@
-# 🧠 AI Concepts Made Simple
+# Core Concepts: Modal Deployments & Devstral 24B
 
-## What is Artificial Intelligence?
+## Large Language Model (LLM) Fine-Tuning
 
-Imagine you have a really smart friend who has read millions of books and can help you with almost any question. That's basically what an AI model is - a computer program that has learned from tons of text and can generate helpful responses.
+Fine-tuning is the process of adapting a pre-trained large language model (LLM) to a specialized domain or task by continuing its training on a curated dataset. This enables the model to acquire domain-specific knowledge, improve performance on targeted tasks, and support advanced workflows such as code generation, reasoning, and tool-calling.
 
-## Key Concepts
+### Why Fine-Tune?
 
-### 1. What is a Language Model?
-A language model is like a very sophisticated autocomplete. You know how your phone suggests the next word when you're typing? A language model does that, but much more intelligently and can write entire paragraphs or even essays.
+- **Domain Adaptation:** Enhance model performance for software engineering, scientific research, or enterprise use cases.
+- **Instruction Following:** Improve the model's ability to follow complex, multi-step instructions.
+- **Tool Use:** Enable the model to interact with APIs, databases, or external systems via tool-calling.
 
-**Simple Example:**
-- You type: "The capital of France is..."
-- The model predicts: "Paris"
+## LoRA: Low-Rank Adaptation
 
-### 2. What is Fine-tuning?
-Fine-tuning is like teaching a smart student to become an expert in a specific subject.
+LoRA (Low-Rank Adaptation) is a parameter-efficient fine-tuning technique that injects trainable low-rank matrices into each layer of a transformer model. This allows for rapid adaptation with minimal memory and compute overhead, making it feasible to fine-tune very large models (e.g., Devstral 24B) on modest hardware.
 
-**Analogy:** 
-- Base model = Smart high school graduate
-- Fine-tuning = Specialized college training
-- Fine-tuned model = Expert in that field
+- **Advantages:**
+  - Reduces GPU memory requirements
+  - Enables fast experimentation and deployment
+  - Preserves base model weights for reproducibility
 
-**Example:**
-- Start with: General AI that knows about everything
-- Fine-tune with: Lots of coding examples and explanations
-- Result: AI that's really good at helping with programming
+## Modal Labs: Cloud-Native AI Infrastructure
 
-### 3. What are Tokens?
-Tokens are how AI models "see" text. Instead of reading letters, they read chunks of text called tokens.
+Modal Labs provides a scalable, serverless platform for deploying and managing machine learning workloads. Key features include:
 
-**Examples:**
-- "Hello world!" → ["Hello", " world", "!"]
-- "programming" → ["program", "ming"]
-- "AI" → ["AI"]
+- **GPU Acceleration:** On-demand access to high-performance GPUs for training and inference
+- **Container Orchestration:** Automated provisioning, scaling, and lifecycle management
+- **API Exposure:** Seamless deployment of FastAPI or custom endpoints for model serving
 
-### 4. What is Training Data?
-Training data is like a textbook for the AI. It shows the AI examples of questions and good answers.
+## Ollama: Model Management & Inference
 
-**Format:**
+Ollama is a lightweight, extensible system for managing, running, and customizing LLMs. In this project, Ollama is used to:
+
+- Pull and cache base models (e.g., Devstral 24B)
+- Build custom models from Modelfiles
+- Serve models via a local or remote API
+- Integrate with Modal Labs for cloud deployment
+
+## Agentic Coding Workflows
+
+Agentic workflows refer to the use of LLMs as autonomous or semi-autonomous agents capable of:
+
+- **Code Generation:** Writing, refactoring, and explaining code
+- **Tool-Calling:** Invoking external APIs, scripts, or services
+- **Reasoning:** Solving complex, multi-step problems with chain-of-thought or scratchpad methods
+
+## Reproducibility & Experimentation
+
+- **YAML Configuration:** All model, training, and deployment parameters are version-controlled and human-readable
+- **Dataset Versioning:** Use Hugging Face Datasets or local files with explicit versioning for reproducible experiments
+- **Experiment Tracking:** Integrate with Weights & Biases (W&B) for logging, visualization, and comparison
+
+## Security & Best Practices
+
+- **Dependency Management:** Use `pyproject.toml` and pre-commit hooks to ensure code quality and security
+- **Access Control:** Configure API endpoints and Modal Labs deployments with appropriate authentication and rate limiting
+- **Monitoring:** Enable logging and monitoring for all production deployments
+
+---
+
+For further reading, see the [SETUP_GUIDE.md](SETUP_GUIDE.md) and [TROUBLESHOOTING.md](TROUBLESHOOTING.md) files.

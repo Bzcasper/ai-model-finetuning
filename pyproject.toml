@@ -1,17 +1,22 @@
 [project]
 name = "modal-deployments"
-version = "0.1.0"
-description = "Modal Labs deployments for AI services"
+version = "1.0.0"
+description = "AI Model Fine-tuning System for Modal Labs with Ollama integration"
 readme = "README.md"
-requires-python = "~=3.12"
-license = {text = "MIT"}
+requires-python = ">=3.11"
+license = { text = "MIT" }
 authors = [
-    {name = "Your Name", email = "your.email@example.com"}
+    { name = "Modal Deployments Team", email = "team@modal-deployments.dev" },
 ]
+keywords = ["ai", "machine-learning", "modal-labs", "ollama", "fine-tuning"]
 classifiers = [
-    "Development Status :: 3 - Alpha",
+    "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 dependencies = [
